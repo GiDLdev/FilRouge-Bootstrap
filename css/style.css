@@ -1,0 +1,637 @@
+*{
+    margin:0;
+    padding:0;
+    border:0;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 320px) and (max-width: 414px) and (orientation: portrait) {	
+
+body, html{
+    height:100%;
+}
+
+body{
+    width:100%;
+    line-height: 19px;
+    color:#e0dccc;
+}
+ 
+a{
+    text-decoration: none;
+    cursor:pointer;
+}
+
+a:hover,
+a:active,
+a:focus{
+	outline: 0;
+	text-decoration:none;
+}
+
+a img {
+	border: none;
+}
+
+img {
+	max-width: none;	
+}
+
+em{
+    font-family: 'Myriad Pro';
+    font-style:italic;
+}
+
+strong{
+    font-family: 'Myriad Pro';
+    font-weight:bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Crimson Text';
+    font-weight: 700;
+}
+
+h1{
+    font-size: 36px;
+}
+
+h2{
+    font-size: 32px;
+}
+
+h3{
+    font-size: 20px;
+    line-height: 21px;
+    font-weight: 600;
+
+}
+
+h4{ 
+    font-size: 20px;
+    color:#040302;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom:5px
+}
+
+h5{
+    font-size: 18px;
+}
+
+h6{
+    font-size: 16px;
+}
+
+p{
+    font-family: 'Myriad Pro Regular';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 13px;
+    margin-bottom:19px;
+}
+
+button{
+    display:inline-block;
+    width:138px;
+    height:38px;
+    background-color: transparent;
+    border:solid 1px #e0dccc;
+    color:#e0dccc;
+    border-radius: 0;
+    vertical-align: middle;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Crimson Text Bold";
+    font-size: 13px;
+    letter-spacing: -0.4px;
+    cursor:pointer;
+    transition: all 0.1s linear;
+}
+
+button:hover,
+button:active,
+button:focus {
+    background-color: #e0dccc;
+    color:#040302;
+    border:solid 1px #e0dccc;
+}
+
+
+    header{
+        width:100%;
+        height:101px;
+        background-color: #000000;
+    }
+
+    .logo1{
+        background: url(../img/logo1-ac-vect.svg) no-repeat bottom center;
+        background-size: 170px 88px;
+        width:100%;
+        height:101px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header .sticky-nav{          /* topbar noire (class d'appel de js pour waypoint déclencheur sticky) : barre de menu, invisible */
+        background-color:rgba(0, 0, 0, 0);
+        opacity: 0;
+        width:100%;
+        height:54px;
+    }
+
+   header .sticky-nav.stuck{  /* barre de menu, devenu fixe */
+        position: fixed;
+        top:0;
+        left:0;
+    }
+
+   .sticky-nav.stuck.logo3{  /* barre de menu, devenu fixe à laquelle on ajoute le petit logo et le tout devient visible */
+        background: url(../img/mobile/logo3.svg) rgba(0, 0, 0, 1) no-repeat 15px 15px;
+        background-size: 213px 22px;
+        opacity: 1;
+        z-index: 500;
+        filter: alpha(opacity=100);
+     transition: opacity 0.5s ease-in-out;
+    }
+
+    nav#menu{
+        display:none;         /* on ne joue pas l'id 'menu', qui est destiné à la version desktop */
+    }
+
+/* ==================================================
+   Mobile Menu Navigation
+================================================== */
+
+    #mobile-nav{
+        display:block;
+        float: right;
+    }
+
+    #menu-nav-mobile{
+        position:absolute;
+        width:100%;
+        height:100vh;
+        top:0;
+        left:0;
+  
+        background: url(../img/logo1-ac-vect.svg), url(../img/mobile/mobile_arabesque1.png);
+        background-repeat: no-repeat, no-repeat;
+        background-position:top center, bottom left;
+        background-size: 170px 88px, 113px 330px;
+        background-position-x: center, -24px;
+        background-position-y: 15px, bottom;
+    }
+
+    .menu-nav{     
+        background: url(../img/hamburger-icon.svg) no-repeat 0 0;
+        width: 25px;
+        height:25px;
+        display: block;
+        position: fixed;
+        right:15px;
+        top: 15px;
+        z-index: 1001;
+		      transform: rotate(0deg);
+		   transition: transform 300ms ease-out 0s;
+    }
+
+    .menu-nav.open {         
+        background: url(../img/cross-icon.svg) no-repeat 0 0;
+        width:25px;
+        height:25px;
+        display: block;
+        z-index: 1002;
+        transform: rotate(-180deg);
+        transition: transform 300ms ease-out 0s;	
+    }
+
+    #navigation-mobile {             /* partie (#navigation-mobile) de css d'appel par js  => page Menu cachée */
+        display: none;
+        position:fixed;
+        top:0;
+        right:-100%;
+        z-index: 700;
+
+        background: url(../img/angeliquecalfatidotcom_motif-n.gif) repeat 0 0;
+        background-size: 8px 8px;
+        width:100%;
+        height:100vh;
+    }
+
+    .select {             
+        -webkit-animation: moveToLeftFade .7s ease both;
+        animation: moveToLeftFade .7s ease both;
+    }
+
+    @-webkit-keyframes moveToLeftFade {
+        from { }
+        to { opacity: 1; -webkit-transform: translateX(-100%); }
+    }
+
+    @keyframes moveToLeftFade {
+        from { }
+        to { opacity: 1; transform: translateX(-100%); }
+    }
+
+    .close {             
+    
+        -webkit-animation: moveFromLeftFade .6s ease both;
+        animation: moveFromLeftFade .6s ease both;
+    }
+
+    @-webkit-keyframes moveFromLeftFade {
+        from { opacity: 0.4; -webkit-transform: translateX(-100%); }
+    }
+    @keyframes moveFromLeftFade {
+        from { opacity: 0.4; transform: translateX(-100%); }
+    } 
+
+
+    #navigation-mobile li {
+        list-style: none;
+    }
+    
+    #navigation-mobile li a{
+        font-family: 'Crimson Text';
+        font-weight: 600;
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color:rgba(224, 220, 204, 0.6);
+    }
+
+    #navigation-mobile li:first-child{
+        margin-top: 142px;
+    }
+
+    #navigation-mobile li a:hover{
+        color:#e0dccc;
+    }
+    #navigation-mobile li a:active,
+    #navigation-mobile li a.current{
+        color:#fffae4;
+    }
+
+/* ==================================================
+  Cover
+================================================== */
+    img.covertabland,
+    img.coverdesk{
+        display:none;
+    }
+
+    .covermob{
+        background-size: cover;
+        width:320px;
+        height:316px;
+    }
+
+/* ==================================================
+  Bloc Activity
+================================================== */
+
+    #bloc-acti123{
+        display:none;
+    }
+
+    #bloc-activity{
+        position :relative;
+        background:url(../img/angeliquecalfatidotcom_motif-n.gif) repeat left top;
+        background-size:8px 8px;
+        width:100%;
+    }
+    
+    #bloc-activity h3.mobile-p1{
+        padding:19px 0 0;
+        margin-bottom: 19px;
+    }
+
+    #bloc-activity p.mobile-p1{
+        margin-bottom: 19px;
+    }
+
+/* ==================================================
+   Bloc Services
+================================================== */
+
+    #bloc-services{
+        position: relative;
+        background-color: #fffae4;
+        width: 100%;
+    }
+
+    img.arabesque-d{
+        display:none;
+    }
+
+    #modules{
+        width: 100%;
+        height:603px;
+        margin-bottom: 38px;
+    }
+
+    #modules ul{
+        display:flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    #modules li{
+        list-style-type: none;
+    }
+    
+    #modules li{
+        display:block;
+        padding-top: 19px;
+        width:138px;
+        height:201px;
+        text-align: center;
+    }
+
+    #modules p.p5{
+        color:#040302;
+    }
+
+    #modules button.red{
+        background-color: #730012;
+    }
+ 
+    #modules button.red:hover,
+    #modules button.red:active,
+    #modules button.red:focus {
+        background-color: #fffae4;
+        color:#730012;
+        border:solid 1px #730012;
+    }
+
+/* ==================================================
+   Bloc Encadré
+================================================== */
+
+    #bloc-services #bloc-encadre{
+        position:relative;
+        background: url(../img/angeliquecalfatidotcom_motif-j.gif)repeat; 
+        background-size: 8px 8px;
+        width:100%;
+        height:303px;
+    }
+
+    .encadre{
+        position:relative;
+        width:290px;
+        height:266px;
+        margin-top: 19px;
+        background-color: #040302;
+        padding:19px;
+    }
+
+    .encadre h2{
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom:19px;
+    }
+
+    .encadre p span.p6tab{
+        display:none;
+    }
+
+    .encadre p.p6{
+        width:180px;
+    }
+
+    .costume1,
+    .costume3{
+        display:none;
+    }
+
+    #bloc-services .costume2{
+        position: absolute;
+        width: 217px;
+        height:552px;
+        width:29%;
+        height:auto;
+        right:0;
+        bottom:19px;
+    }
+        
+
+/* ==================================================
+   Bloc Boutique
+================================================== */
+
+    #bloc-boutique{
+        position: relative;
+        width:100%;
+        height:205px;
+        background: url(../img/angeliquecalfatidotcom_motif-r.gif) repeat left top;
+        background-size: 8px 8px;
+    }
+    
+    #bloc-boutique h3{
+        padding-top:19px;
+        letter-spacing: -0.1px;
+    }
+    
+    #galerie{
+        /*position:relative;*/
+        display:inline-block;
+        margin-top:19px;
+        width:100%;
+        height:92px;
+        overflow: hidden;
+    }
+    
+    #galerie ul{
+        height:92px;
+        width:100%;
+        position:absolute;
+        overflow: hidden;
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: space-between;
+        overflow-x: scroll;
+    }
+    
+    #galerie li{
+        list-style: none;
+    }
+
+    #galerie img{
+        width:138px;
+        height:92px;
+        margin-right: 10px;
+    }
+
+    .clicg,
+    .clicd{
+        display:none;
+    }
+
+/* ==================================================
+   Bloc Contact
+================================================== */
+
+    .barre-contact{
+        position:relative;
+        background-color: #e0dccc;
+        width:100%;
+        height:1px;
+    }
+
+    #bloc-contact{
+        position:relative;
+        background: url(../img/angeliquecalfatidotcom_motif-n.gif)repeat; 
+        background-size: 8px 8px;
+        width:100%;
+    }
+
+    #bloc-contact ul{
+        margin-bottom: 0px;
+        display:flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+    }
+
+    #bloc-contact li{
+        list-style-type: none;
+    }
+    
+    ul span.mailico{
+        display:inline-block;
+        background: url(../img/mail-icon.svg), rgba(4, 3, 2, 0);
+        background-repeat: no-repeat ;
+        background-position:center;
+        background-size: 43px 23px;
+        border: solid 1px #e0dccc;
+        width:60px;
+        height:60px;
+        margin-top:19px;
+        margin-bottom:19px;
+    }
+
+    ul span.fbico{
+        display:inline-block;
+        background: url(../img/logo-fb-icon.svg), rgba(4, 3, 2, 0);
+        background-repeat: no-repeat ;
+        background-position:center;
+        background-size: 16px 30px;
+        border: solid 1px #e0dccc;
+        width:60px;
+        height:60px;
+        margin-top:19px;
+        margin-bottom:19px;
+    }
+
+    ul span.mailico:hover,
+    ul span.mailico:active {
+        background: url(../img/mail_n-icon.svg), rgba(224, 220, 204, 1);
+        background-repeat: no-repeat ;
+        background-position:center;
+    }
+
+    ul span.fbico:hover,
+    ul span.fbico:active {
+        background: url(../img/logo_fb-n-ico.svg), rgba(224, 220, 204, 1);
+        background-repeat: no-repeat ;
+        background-position:center;
+    }
+
+/* ==================================================
+   Bloc Footer
+================================================== */
+
+    footer {
+        width:100%;
+        height:83px;
+        background-color: #040302;
+    }
+
+    hr{
+        margin-top:0;
+        margin-bottom:10px;
+        position: relative;
+        background-color: #e0dccc;
+        width:100%;
+    }
+    p.p7,
+    p.p7 a{
+        /*padding-top: 10px;*/
+        font-size: 12px;
+        line-height: 18px;
+        color:#e0dccc;
+    }
+
+    p.p7 a:hover,
+    p.p7 a:active,
+    p.p7 a:focus{
+        color:#fffae4;
+        -webkit-text-decoration-line: underline;
+                text-decoration-line: underline;
+    }
+
+}
+
+/*
+
+@media screen and (min-width: 321px) and (max-width: 375px) and (orientation: portrait) {
+
+    .ouverture{
+        background: url(../img/tablet/angeliquecalfatidotcom_cover834x829.jpg) no-repeat;
+        background-size: cover;
+        width:100%;
+        height: 373px;
+    }
+
+}
+
+
+@media screen and (min-width: 376px) and (max-width: 414px) and (orientation: portrait) {	
+
+   
+/* ==================================================
+  Cover
+================================================== 
+
+    .ouverture{
+        background: url(../img/tablet/angeliquecalfatidotcom_cover834x829.jpg) no-repeat;
+        background-size: cover;
+        width:100%;
+        height: 400px;
+    }
+
+
+/* ==================================================
+   Bloc Encadré
+================================================== 
+
+    .costume1{
+        display: inline-block;
+        position: absolute;
+        width: 217px;
+        height:552px;
+        width:25%;
+        height:auto;
+        right: 85px;
+        bottom:19px;
+    }
+
+    .costume2{
+        display: inline-block;
+        position: absolute;
+        width: 217px;
+        height:552px;
+        width:auto;
+        height:90%;
+        right: 0px;
+        bottom:19px;
+    }
+}
+*/

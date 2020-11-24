@@ -33,11 +33,11 @@ jQuery(function($){
 			}else if ($("#mobile-nav").removeClass('open')){
 				$("#navigation-mobile").addClass('close');
 
-			}else{
-				$("#mobile-nav").hasClass('menu-nav');
-				$("#navigation-mobile").css('display', 'none');
+				setTimeout(function(){
+					$("#navigation-mobile").removeClass('close');
+					$("#navigation-mobile").css('display', 'none');
+				},800);
 			}
-
 			e.preventDefault();
 
 		})
@@ -45,9 +45,11 @@ jQuery(function($){
 		$("#menu-nav-mobile a").on('click', function(e){
 			$("#navigation-mobile").toggleClass('close');
 			$("#mobile-nav").removeClass('open');
-				//$("#navigation-mobile").css('display', 'none');
+			setTimeout(function(){
+				$("#navigation-mobile").removeClass('close');
+				$("#navigation-mobile").css('display', 'none');
+			},800);
 
-		
 			e.preventDefault();
 
 		})

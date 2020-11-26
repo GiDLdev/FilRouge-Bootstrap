@@ -10,7 +10,7 @@ jQuery(function($){
 	angelFIRE.mobileNav = function(){
 		var windowWidth = $(window).width();
 
-		if( windowWidth <= 1365 ) {
+		if( windowWidth <= 1279 ) {
 			if( $("#mobile-nav").length > 0 ) {
 				mobileMenuClone.insertAfter('#menu');
 				$("#navigation-mobile #menu-nav").attr('id', 'menu-nav-mobile');

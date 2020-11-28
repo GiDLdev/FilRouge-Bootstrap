@@ -4,11 +4,6 @@
     border:0;
     box-sizing: border-box;
 }
-/*
-@media screen and (min-width: 320px) and (max-width: 834px) and (orientation: portrait) {	
-*/
-
-
 
 body{
     width:100%;
@@ -52,8 +47,7 @@ h3,
 h4,
 h5,
 h6{
-    font-family: 'Crimson Text';
-    font-weight: 700;
+    font-family: 'Crimson Text Bold';
 }
 
 h1{
@@ -61,13 +55,14 @@ h1{
 }
 
 h2{
-    font-size: 32px;
+    font-size: 20px;
+    line-height: 24px;
 }
 
 h3{
     font-size: 20px;
     line-height: 21px;
-    font-weight: 400;
+    font-family: 'Crimson Text Regular';
 }
 
 h4{ 
@@ -75,13 +70,11 @@ h4{
     color:#040302;
     text-align: center;
     text-transform: uppercase;
-    margin-bottom:5px
+    margin-bottom:5px;
 }
 
 h5{
     font-size: 18px;
-    font-weight: 700;
-
 }
 
 h6{
@@ -399,8 +392,6 @@ button:focus {
     }
 
     .encadre h2{
-        font-size: 20px;
-        line-height: 24px;
         margin-bottom:19px;
     }
 
@@ -419,12 +410,11 @@ button:focus {
 
     #bloc-services .costume2{
         position: absolute;
-        /*width: 217px;
-        height:552px;*/
         width:auto;
         max-height:90%;
         right:0;
         bottom:0;
+        margin-right:-15px;
     }
         
 
@@ -560,6 +550,7 @@ button:focus {
         width:100%;
         height:83px;
         background-color: #040302;
+        padding: 0 15px;
     }
 
     hr{
@@ -572,8 +563,6 @@ button:focus {
 
     p.p7,
     p.p7 a{
-        font-size: 12px;
-        line-height: 18px;
         color:#e0dccc;
     }
 

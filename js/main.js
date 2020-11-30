@@ -54,9 +54,30 @@ jQuery(function($){
 
 		})
 
-    };
-    
+	};
 
+
+	let $reset = $('.reset'),
+		$erreur = $('required'),
+		$input = $('input'),
+		$text = $('textarea');
+
+	$reset.click(function(){
+        $input;
+		$text;
+		$erreur.css('display', 'none'); 
+	});
+	
+
+	$(".envoi").click(function(){
+		$('#toast1').toast('show');
+	});
+	
+
+
+
+
+	
     /* ==================================================
 	   Navigation Fix
 	================================================== */
@@ -65,9 +86,10 @@ jQuery(function($){
 		var sticky = new Waypoint.Sticky({
 	  		element: $('.sticky-nav')[0]
 		});
-    };
+	};
 
 
+	
     /* ==================================================
 		Init
     ================================================== */
@@ -81,4 +103,11 @@ jQuery(function($){
 	$(window).resize(function(){
 		angelFIRE.mobileNav();
 	}); 
+
 });
+
+
+
+
+
+	

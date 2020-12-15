@@ -277,7 +277,7 @@ button:focus {
         color:#e0dccc;
     }
 
-    /*#navigation-mobile li a:active,*/
+    #navigation-mobile li a:active,
     #navigation-mobile li a.current{
         color:#fffae4;
     }

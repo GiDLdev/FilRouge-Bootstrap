@@ -709,10 +709,13 @@
         text-align: center;
     }
     
-    #menu li .current,
-    #menu li a:hover
-    /*#menu li a:active,
-    #menu li a:focus*/{
+    #menu li a:hover{
+        color:#e0dccc;
+    }
+
+    #menu li a.current,
+     #menu li a:active,
+     #menu li a:focus{
         color:#fffae4;
     }
 

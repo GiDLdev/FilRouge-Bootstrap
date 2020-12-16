@@ -597,7 +597,7 @@
     #bloc-services .costume3{
         height:85%;
         bottom:46px;
-        margin-right:20px;
+        right:20px;
     }
 
     #bloc-boutique{
@@ -684,23 +684,23 @@
         z-index: 1000;
     }
 
-    #menu ul{
+    nav#menu ul{
         float: right;
         margin-right:24px;
         margin-top:46px;
     }
     
-    #menu li{
+    nav#menu li{
         list-style: none;
         display:inline-block;
         margin-left: 24px;
     }
     
-    #menu  li:first-child {
+    nav#menu  li:first-child {
         margin-left: 0;	
     }
     
-    #menu  li a{
+    nav#menu  li a{
         font-family: 'Crimson Text Regular';
         color:#4e473e;
         font-size: 18px;
@@ -709,13 +709,13 @@
         text-align: center;
     }
     
-    #menu li a:hover{
+    nav#menu li a:hover{
         color:#e0dccc;
     }
 
-    #menu li a.current,
-     #menu li a:active,
-     #menu li a:focus{
+    nav#menu li a.current,
+     nav#menu li a:active,
+     nav#menu li a:focus{
         color:#fffae4;
     }
 
